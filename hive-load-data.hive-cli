@@ -1,0 +1,4 @@
+ADD jar /home/demo/src/dev-setup/json-serde-1.3-jar-with-dependencies.jar;
+DROP TABLE compound_similarity;
+CREATE TABLE compound_similarity (i_id string, uhttp_semanticscience_org__resource__CHEMINF_000482 array<map<string,string>>) ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe';
+LOAD DATA LOCAL INPATH 'pubchem.json' INTO TABLE compound_similarity;
